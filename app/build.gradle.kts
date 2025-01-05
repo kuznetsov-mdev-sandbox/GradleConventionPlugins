@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "ru.sandbox.gcp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "ru.sandbox.gcp"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
