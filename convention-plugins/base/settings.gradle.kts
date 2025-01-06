@@ -12,7 +12,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            url = URI("https://androidx.dev/storage/compose-compiler/repository/")
+            url = uri("https://androidx.dev/storage/compose-compiler/repository/")
         }
     }
     versionCatalogs {
@@ -22,3 +22,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "base"
+include(":base")
