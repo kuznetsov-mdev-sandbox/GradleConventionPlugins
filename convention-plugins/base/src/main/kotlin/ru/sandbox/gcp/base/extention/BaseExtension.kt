@@ -1,4 +1,4 @@
-package ru.sandbox.gcp.base
+package ru.sandbox.gcp.base.extention
 
 import com.android.build.api.dsl.AndroidResources
 import com.android.build.api.dsl.BuildFeatures
@@ -9,8 +9,11 @@ import com.android.build.api.dsl.Installation
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.dsl.ProductFlavor
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import org.gradle.accessors.dm.LibrariesForLibs
+import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.findByType
+import org.gradle.kotlin.dsl.the
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
@@ -38,3 +41,9 @@ fun Project.kotlinJvmCompilerOptions(block: KotlinJvmCompilerOptions.() -> Unit)
         compilerOptions(block)
     }
 }
+
+val Project.libs: LibrariesForLibs
+    get() = the<LibrariesForLibs>()
+
+val Project.projectJavaVersion: JavaVersion
+    get() = JavaVersion.toVersion(libs.versions.java.get().toInt())
