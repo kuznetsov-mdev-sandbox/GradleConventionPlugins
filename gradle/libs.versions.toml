@@ -11,6 +11,10 @@ activityCompose = "1.9.3"
 compose = "1.6.10"
 composeBom = "2024.12.01"
 
+minSdk = "28"
+targetSdk = "35"
+compileSdk = "35"
+
 [libraries]
 # Plugins for composite build
 android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
